@@ -1,0 +1,12 @@
+<header class="w-full p-6 flex justify-between items-center pl-20 sm:pl-6">
+  <h1 class="font-semibold text-3xl text-shadow-4">
+    {{ screenTitle }}
+  </h1>
+  <button
+    class="flex gap-5 items-center px-3 py-2 rounded-xl font-bold text-[16px] text-white text-shadow-3"
+    [class.bg-custom-blue]="!connected"
+    [class.bg-custom-green]="connected"
+  >
+    {{connected ? 'Create Campaign' : 'Connect'}}
+  </button>
+</header>

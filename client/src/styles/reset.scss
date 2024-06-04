@@ -1,0 +1,6 @@
+button {
+  all: unset; /* Resets all inherited properties */
+  display: inline-block; /* Reset display property if necessary */
+  cursor: pointer; /* Ensures cursor is a pointer on hover */
+  text-align: center; /* Centers text within the button */
+}

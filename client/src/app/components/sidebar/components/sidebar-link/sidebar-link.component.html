@@ -1,0 +1,7 @@
+<a [routerLink]="item.link">
+  <app-sidebar-item 
+    [title]="item.title"
+    [iconName]="isActive() ? item.activeIconName : item.inactiveIconName"
+    [isActive]="isActive()"
+  ></app-sidebar-item>
+</a>

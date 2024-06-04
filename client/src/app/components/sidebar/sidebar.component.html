@@ -1,0 +1,50 @@
+<!-- Sidebar Toggle Button -->
+<app-toggle-sidebar-button
+  (toggleSidebarEmitter)="toggleSidebar()"
+  aria-label="Toggle Sidebar"
+  class="fixed top-[27px] left-6 sm:hidden z-10"
+></app-toggle-sidebar-button>
+
+<!-- Sidebar -->
+<div 
+  class="fixed transform transition-transform duration-300 sm:relative sm:translate-x-0" 
+  [class.translate-x-0]="isSidebarOpen"
+  [class.-translate-x-full]="!isSidebarOpen"
+  [class.inset-0]="isSidebarOpen || (!isSidebarOpen && isSidebarOpenAnimationEnded)"
+  role="complementary"
+>
+  <div class="sticky top-0 bg-custom-dark-gray min-h-screen sm:w-[250px] flex flex-col justify-between py-6 px-4">
+    <!-- Sidebar Header -->
+    <div class="flex flex-col">
+      <div class="flex items-center gap-1 pr-4 border-b border-custom-border-gray pb-5 justify-center">
+        <img 
+          src="assets/images/project-logo.png" 
+          alt="Project Logo"
+          class="w-12"
+        >
+        <p class="font-bold text-[21px] text-shadow-3">
+          Web3 Starter
+        </p>
+      </div>
+
+      <!-- Sidebar Links -->
+      <nav class="flex flex-col gap-6 mt-11" aria-label="Sidebar Navigation">
+        <app-sidebar-link 
+          *ngFor="let item of sidebarItems" 
+          [item]="item"
+        ></app-sidebar-link>
+      </nav>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <button 
+      aria-label="Logout"
+      class="border-t border-custom-border-gray pt-2"
+    >
+      <app-sidebar-item
+        iconName="heroArrowLeftEndOnRectangle"
+        title="Logout"
+      ></app-sidebar-item>
+    </button>
+  </div>
+</div>
