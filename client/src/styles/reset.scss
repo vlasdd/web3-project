@@ -4,3 +4,39 @@ button {
   cursor: pointer; /* Ensures cursor is a pointer on hover */
   text-align: center; /* Centers text within the button */
 }
+
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 1.5px solid #31353f;
+  padding: 12px 16px 12px 16px;
+  border-radius: 8px;
+  background: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  color: #9E9E9E;
+  line-height: inherit;
+  outline: none;
+  resize: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color-scheme: dark;
+}
+
+textarea {
+  overflow: auto; /* Ensures textarea is scrollable */
+  min-height: 150px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

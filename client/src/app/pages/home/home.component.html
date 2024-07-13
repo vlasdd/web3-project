@@ -1,1 +1,6 @@
-<p>home works!</p>
+<div class="flex flex-wrap justify-center lg:justify-start gap-12 m-8">
+  <app-campaign-card
+    *ngFor="let campaign of campaigns" 
+    [campaign]="campaign"
+  ></app-campaign-card>
+</div>

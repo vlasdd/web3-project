@@ -1,21 +1,27 @@
-import { NgStyle } from '@angular/common';
+import { CommonModule, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
+import { ThirdwebService } from '../../services/thirdweb/thirdweb.service';
 
 const DEFAULT_TITLE = 'Screen'
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgStyle],
+  imports: [NgStyle, CommonModule],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
   screenTitle: string = DEFAULT_TITLE;
-  connected: boolean = false;
+  connected: string | null = null;
+  isCreateCampaign: boolean = false;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private router: Router, 
+    private activatedRoute: ActivatedRoute,
+    private thirdwebService: ThirdwebService
+  ) { }
 
   ngOnInit() {
     this.router.events.pipe(
@@ -32,6 +38,19 @@ export class HeaderComponent {
       })
     ).subscribe((title: string) => {
       this.screenTitle = title;
+      this.isCreateCampaign = this.router.url === '/create-campaign';
     });
+
+    this.thirdwebService.walletAddress$.subscribe((walletAddress) => {
+      this.connected = walletAddress;
+    });
+  }
+
+  async connectWallet() {
+    this.thirdwebService.connectWallet();
+  }
+
+  navigateToCreateCampaign() {
+    this.router.navigate(['/create-campaign']);
   }
 }

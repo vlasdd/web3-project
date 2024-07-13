@@ -1,0 +1,24 @@
+<a 
+  routerLink="campaign/{{campaign.address}}"
+  class="bg-custom-dark-gray w-[300px] rounded-lg flex flex-col"
+>
+  <img
+    [src]="campaign.imageUrl"
+    alt="Campaign Image"
+    class="h-[150px] w-full object-cover rounded-lg"
+  />
+  <div class="flex flex-col gap-3 py-4 px-3">
+    <p class="font-semibold">
+      {{campaign.title}}
+    </p>
+    <p class="text-custom-gray text-sm">
+      {{campaign.description}}
+    </p>
+    <p class="text-custom-gray text-sm">
+      <span class="text-white">{{campaign.balance}}</span> ETH Raised of <span class="text-white">{{campaign.target}}</span> ETH
+    </p>
+    <p class="text-custom-gray text-sm">
+      Deadline: <span class="text-white">{{campaign.deadline}}</span>
+    </p>
+  </div>
+</a>

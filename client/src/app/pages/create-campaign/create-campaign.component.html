@@ -1,0 +1,77 @@
+<div 
+  class="bg-custom-dark-gray rounded-lg flex flex-col gap-12 m-8 p-8"
+  [class.hidden]="isLoading"
+>
+  <div class="max-w-[300px] w-full flex justify-center px-8 py-3 bg-custom-blue self-center rounded-lg">
+    <p class="text-xl font-semibold">
+      Start a Campaign 🚀
+    </p>
+  </div>
+  <div class="flex flex-col gap-8 items-center">
+    <div class="flex flex-col lg:flex-row w-full gap-8">
+      <div class="flex flex-col gap-2 w-full">
+        <p class="text-sm text-custom-gray">
+          Title*
+        </p>
+        <input 
+          type="text" 
+          id="title" 
+          [formControl]="title"
+        >
+      </div>
+      <div class="flex flex-col gap-2 w-full">
+        <p class="text-sm text-custom-gray">
+          Image Url*
+        </p>
+        <input 
+          type="text" 
+          id="imageUrl" 
+          [formControl]="imageUrl" 
+        >
+      </div>
+    </div>
+    <div class="flex flex-col gap-2 w-full">
+      <p class="text-sm text-custom-gray">
+        Description*
+      </p>
+      <textarea 
+        id="description"
+        [formControl]="description"
+      ></textarea>
+    </div>
+    <div class="max-w-[300px] w-full flex justify-center px-8 py-3 bg-custom-purple self-center rounded-lg text-center">
+      <p class="text-xl font-semibold">
+        You will get 100% of the raised amount 💸
+      </p>
+    </div>
+    <div class="flex flex-col lg:flex-row w-full gap-8">
+      <div class="flex flex-col gap-2 w-full">
+        <p class="text-sm text-custom-gray">
+          Target (in ETH)*
+        </p>
+        <input 
+          type="number" 
+          id="target" 
+          [formControl]="target" 
+        >
+      </div>
+      <div class="flex flex-col gap-2 w-full">
+        <p class="text-sm text-custom-gray">
+          Deadline*
+        </p>
+        <input 
+          type="date" 
+          id="deadline" 
+          [formControl]="deadline" 
+        >
+      </div>
+    </div>
+    <button
+      class="flex gap-5 items-center px-3 py-2 rounded-lg font-bold text-[16px] text-white text-shadow-3 bg-custom-green disabled:bg-custom-gray disabled:opacity-50"
+      (click)="createCampaign()"
+      [disabled]="submitDisabled"
+    >
+      Submit New Campaign
+    </button>
+  </div>
+</div>

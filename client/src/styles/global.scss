@@ -18,3 +18,34 @@ p, h1, h2, h3, h4, h5, h6  {
 .text-shadow-2 {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
+
+#toast-container {
+  top: 20px;
+}
+
+#toast-container .toast-message {
+  margin-left: -35px !important;
+}
+
+#toast-container>.toast-success {
+  background-color: #1ecb4f;
+  border-radius: 12px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-weight: 700;
+  font-size: 16px;
+  background-image: none;
+  width: fit-content;
+}
+
+#toast-container>.toast-error {
+  background-color: #f53340;
+  border-radius: 12px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-weight: 700;
+  font-size: 16px;
+  background-image: none;
+  width: fit-content;
+}
+

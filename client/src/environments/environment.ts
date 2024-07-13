@@ -1,0 +1,3 @@
+export const environment = {
+  CROWDFUNDING_CONTRACT_ADDRESS: '0xE1aD0AA753D049816017b4163c06572ab77dCf56',
+};

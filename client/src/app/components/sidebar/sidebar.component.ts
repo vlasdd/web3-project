@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { ThirdwebService } from '../../services/thirdweb/thirdweb.service';
 import { SidebarItemComponent } from './components/sidebar-item/sidebar-item.component';
 import { SidebarLinkComponent } from './components/sidebar-link/sidebar-link.component';
 import { ToggleSidebarButtonComponent } from './components/toggle-sidebar-button/toggle-sidebar-button.component';
@@ -23,7 +24,10 @@ export class SidebarComponent {
   isSidebarOpen = false;
   isSidebarOpenAnimationEnded = false;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private thirdwebService: ThirdwebService,
+  ) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.isSidebarOpen = false;
@@ -36,5 +40,9 @@ export class SidebarComponent {
     setTimeout(() => {
       this.isSidebarOpenAnimationEnded = !this.isSidebarOpenAnimationEnded;
     }, 300)
+  }
+
+  disconnect() {
+    this.thirdwebService.disconnectWallet();
   }
 }

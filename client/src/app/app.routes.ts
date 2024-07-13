@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { CampaignsComponent } from './pages/campaigns/campaigns.component';
-import { DonatesComponent } from './pages/donates/donates.component';
+import { CampaignComponent } from './pages/campaign/campaign.component';
+import { CreateCampaignComponent } from './pages/create-campaign/create-campaign.component';
 import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
@@ -12,17 +12,17 @@ export const routes: Routes = [
     } 
   },
   { 
-    path: 'campaigns', 
-    component: CampaignsComponent, 
+    path: 'create-campaign', 
+    component: CreateCampaignComponent, 
     data: { 
-      title: 'Campaigns' 
+      title: 'Create Campaign' 
     } 
   },
   { 
-    path: 'donates', 
-    component: DonatesComponent, 
+    path: 'campaign/:id', 
+    component: CampaignComponent,
     data: { 
-      title: 'Donates' 
+      title: 'Campaign' 
     } 
   },
 ];

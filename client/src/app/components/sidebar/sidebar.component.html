@@ -7,13 +7,13 @@
 
 <!-- Sidebar -->
 <div 
-  class="fixed transform transition-transform duration-300 sm:relative sm:translate-x-0" 
+  class="fixed transform h-full transition-transform duration-300 sm:relative sm:translate-x-0" 
   [class.translate-x-0]="isSidebarOpen"
   [class.-translate-x-full]="!isSidebarOpen"
   [class.inset-0]="isSidebarOpen || (!isSidebarOpen && isSidebarOpenAnimationEnded)"
   role="complementary"
 >
-  <div class="sticky top-0 bg-custom-dark-gray min-h-screen sm:w-[250px] flex flex-col justify-between py-6 px-4">
+  <div class="sticky top-0 bg-custom-dark-gray h-screen sm:w-[250px] flex flex-col justify-between py-6 px-4">
     <!-- Sidebar Header -->
     <div class="flex flex-col">
       <div class="flex items-center gap-1 pr-4 border-b border-custom-border-gray pb-5 justify-center">
@@ -40,10 +40,11 @@
     <button 
       aria-label="Logout"
       class="border-t border-custom-border-gray pt-2"
+      (click)="disconnect()"
     >
       <app-sidebar-item
         iconName="heroArrowLeftEndOnRectangle"
-        title="Logout"
+        title="Disconnect"
       ></app-sidebar-item>
     </button>
   </div>

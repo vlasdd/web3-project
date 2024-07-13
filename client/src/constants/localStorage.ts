@@ -1,0 +1,1 @@
+export const LOCAL_STORAGE_METAMASK_WALLET = 'metamask_wallet';
