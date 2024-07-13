@@ -1,6 +1,6 @@
 import { CommonModule, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { ThirdwebService } from '../../services/thirdweb/thirdweb.service';
 
@@ -9,7 +9,7 @@ const DEFAULT_TITLE = 'Screen'
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgStyle, CommonModule],
+  imports: [NgStyle, CommonModule, RouterModule],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {

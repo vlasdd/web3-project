@@ -3,12 +3,18 @@
     {{ screenTitle }}
   </h1>
   <button
-    class="flex gap-5 items-center px-3 py-2 rounded-lg font-bold text-[16px] text-white text-shadow-3"
-    (click)="connected ? navigateToCreateCampaign() : connectWallet()"
-    [class.bg-custom-blue]="connected"
-    [class.bg-custom-green]="!connected"
-    *ngIf="!connected || !isCreateCampaign"
+    class="flex gap-5 items-center px-3 py-2 rounded-lg font-bold text-[16px] text-white text-shadow-3 bg-custom-green"
+    [class.hidden]="connected"
+    (click)="connectWallet()"
   >
-    {{connected ? 'Create Campaign' : 'Connect'}}
+    Connect
   </button>
+  <a
+    class="flex gap-5 items-center px-3 py-2 rounded-lg font-bold text-[16px] text-white text-shadow-3 bg-custom-blue"
+    [class.hidden]="!connected"
+    routerLink="create-campaign"
+    *ngIf="!isCreateCampaign"
+  >
+    Create Campaign
+  </a>
 </header>
